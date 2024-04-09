@@ -1,3 +1,0 @@
-Post response body --> {"code":1,"type":"error","message":"Pet not found"}
-Post response status code --> 404
-Post response status code --> false

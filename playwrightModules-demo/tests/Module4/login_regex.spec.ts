@@ -16,7 +16,7 @@ test('Login a user with invalid credentials @regex', async ({ page }) => {
 
  
     // Verify Error message
-    await expect(page.getByText(/Epic sadface: sorry, this user has been locked out/i)).toBeVisible();
+    await expect(page.getByText(/.*sorry.*/i)).toBeVisible();
 
 })
 

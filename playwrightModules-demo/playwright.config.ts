@@ -24,7 +24,7 @@ const defaultConfig : PlaywrightTestConfig = {
   //expect: { timeout: 10000 },
 
   /* Run tests in files in parallel */
-  fullyParallel: true,
+  fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -37,23 +37,46 @@ const defaultConfig : PlaywrightTestConfig = {
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // reporter: 'html',
   /*Module 4 reporters*/
-  reporter: [['line'],['html'], ["allure-playwright"]],
+  reporter: [['line'],['html'], ["allure-playwright",
+  {
+    categories: [
+      {
+        "name": "Ignored tests",
+        "matchedStatuses": ["skipped"]
+      },
+      {
+        "name": "Passed",
+        "matchedStatuses": ["passed"]
+      },
+      {
+        "name": "Failed",
+        "matchedStatuses": ["failed"]
+      }
+    ],
+    environmentInfo: {
+      framework: "playwright",
+      os_platform: "windows",
+      node_version: "21.7.1"
+    }
+  }
+]
+],
   
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
     
-    /*Module 4 : screenshot and video
+    /*Module 4 : screenshot and video*/
    screenshot: 'on',
    video: 'on',
-    */
+    
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
-    /*Module 4 : traces
+    // trace: 'on-first-retry',
+    /*Module 4 : traces*/
     trace: 'on',
-    */
+    
   },
 
   /* Configure projects for major browsers */
@@ -94,10 +117,10 @@ const defaultConfig : PlaywrightTestConfig = {
     // },
 
     /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
+    {
+      name: 'Mobile Chrome',
+      use: { ...devices['Pixel 5'] },
+    },
     {
       name: 'Mobile Safari',
       use: { ...devices['iPhone 12'] },
