@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-// test.describe.configure({ mode: 'serial' });
+test.describe.configure({ mode: 'parallel' });
 
 test.describe('Tests runs in parallel @parallel', () => {
     test('Login a user with valid credentials', async ({ page }) => {

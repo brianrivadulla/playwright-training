@@ -18,8 +18,8 @@ export class ContactListPage {
         await this.page.waitForLoadState("networkidle");
     }
 
-    async clickRowContact() {
-        await this.tableRow.dblclick();
+    async clickRowContact(fname: string, lname: string) {
+        await this.page.locator('//tr[@class="contactTableBodyRow"]/td[.="' + fname + ' ' + lname + '"]').dblclick();
         await this.page.waitForLoadState("networkidle");
     }
 

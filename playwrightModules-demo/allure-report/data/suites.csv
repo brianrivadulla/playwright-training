@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Apr 09 16:20:33 NZST 2024","Tue Apr 09 16:20:47 NZST 2024","14651","Mobile Chrome","HirokuAppp\hirokuApp.spec.ts","","","","Create, edit and delete Customer @herokuapp",""
+"passed","Tue Apr 09 16:20:32 NZST 2024","Tue Apr 09 16:20:48 NZST 2024","15716","Mobile Safari","HirokuAppp\hirokuApp.spec.ts","","","","Create, edit and delete Customer @herokuapp",""
+"passed","Tue Apr 09 16:20:32 NZST 2024","Tue Apr 09 16:20:47 NZST 2024","15119","chromium","HirokuAppp\hirokuApp.spec.ts","","","","Create, edit and delete Customer @herokuapp",""

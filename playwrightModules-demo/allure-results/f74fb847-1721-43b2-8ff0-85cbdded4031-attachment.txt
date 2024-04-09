@@ -1,2 +1,0 @@
-Before all test
-After all test
